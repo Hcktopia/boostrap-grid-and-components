@@ -1,11 +1,10 @@
 $(document).ready(() => {
-	const $btn = $('.btn')
-    const $skillsList = $('.skills-list')
-   
+	const $container = $('.container')
+	const $skillsList = $('.list-group-item')
 
-    $btn.on('click', (event) => {
-            console.log(event)
-            $skillsList.append(`<li>${event.target.name}</li>`)
-        })
-	
+	$container.on('click', '.card', (event) => {
+		const cardTitle = $(event.currentTarget).find('.card-title').text()
+
+		$skillsList.empty().append(`<li>${cardTitle}</li>`)
+	})
 })
